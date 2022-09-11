@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <input type="text" placeholder="enter name" />
+    <button>Signup</button>
+</body>
+
+</html>
+<script>
+    localStorage.setItem("email", "kapilsharmanfl97@gmail.com")
+
+
+    document.querySelector("button").addEventListener('click', signupFunction)
+
+    function signupFunction() {
+        let name = document.querySelector("input").value;
+        if (name == "masai") {
+            //redirect to lecture.html
+            window.location.href = "lectures.html";
+        }else{
+            alert("enter correct details ")
+        }
+    }
+    let email = localStorage.getItem("email")
+    console.log(email);
+
+    // console.log(window.location.href)
+</script>

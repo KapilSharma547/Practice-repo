@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var btnArr = [
+        { name: "Primary", color: "white", bgColor: "blue" },
+        { name: "Secondary", color: "white", bgColor: "grey" },
+        { name: "Danger", color: "white", bgColor: "red" },
+        { name: "Warning", color: "white", bgColor: "yellow" },
+        { name: "Info", color: "white", bgColor: "grey" },
+        { name: "Light", color: "white", bgColor: "blue" },
+        { name: "Success", color: "white", bgColor: "red" },
+        { name: "Dark", color: "white", bgColor: "grey" },
+        { name: "Link", color: "white", bgColor: "blue" },
+        { name: "Dark Pink", color: "white", bgColor: "grey" }
+    ];
+
+    btnArr.forEach((cur,i) => {
+        let btn = document.createElement("button");
+        btn.innerText = cur.name;
+        btn.style.color= cur.color;
+        btn.style.background = cur.bgColor;
+    
+
+        document.querySelector('body').append(btn);
+    })
+
+
+    // for (let i = 0; i < 9; i++) {
+    //     var btn = document.createElement("button");
+    //     btn.innerText = btnArr[i].name;
+    //     btn.style.backgroundColor = btnArr[i].bgColor
+    //     btn.style.color = btnArr[i].color
+
+
+    //     document.querySelector("body").append(btn);
+    // }
+
+</script>

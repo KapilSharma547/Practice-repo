@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+</head>
+
+<body>
+    <form>
+
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <input value="Signin" type="submit" />
+    </form>
+</body>
+
+</html>
+<script>
+    let form = document.querySelector("form");
+    // signup
+    let signupLS = JSON.parse(localStorage.getItem("signup")) || [];
+
+    form.addEventListener("submit",
+        function (e) {
+            e.preventDefault();
+            if (signupLS.length === 0) {
+                alert("No user till Now");
+                return;
+            }
+            let obj = {
+                email: form.email.value,
+                password: form.password.value,
+            }
+            // console.log(obj)
+            // let flag = true;
+            let isSigned = false;
+            signupLS.forEach(function (ele) {
+                if (ele.email === obj.email &&
+                    ele.password === obj.password) {
+                    // flag = false;
+                    isSigned = true;
+                    localStorage.setItem("signin",
+                        JSON.stringify(ele));
+                    alert("Sign up Successfull")
+                    window.location.href = "index.html"
+                }
+            })
+            // if (flag === true) 
+            if (isSigned === false) {
+                alert("User Doesnot Exist")
+            }
+        })
+</script>
